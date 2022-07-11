@@ -490,7 +490,7 @@ input[id="menuicon"]+label, .slidebar{
 .footer h1{
 	font-weight: 500;
 	font-size: 60px;
-	padding-top: 280px;
+	padding-top: 200px;
 }
 .footer p{	
 	color: #717171;
@@ -663,7 +663,7 @@ input[id="menuicon"]+label, .slidebar{
 @media(max-width:866px){
    .footer h1{
       font-size: 50px;
-      padding-top: 220px;
+      padding-top: 150px;
    }
    .f_text, .f_sub, .f_sub2{
       font-size: 14px;
@@ -713,7 +713,7 @@ input[id="menuicon"]+label, .slidebar{
 @media(max-width:718px){
    .footer h1{
       font-size: 40px;
-      padding-top: 200px;
+      padding-top: 150px;
    }
    .f_text, .f_sub, .f_sub2{
       font-size: 12px;
@@ -737,7 +737,7 @@ input[id="menuicon"]+label, .slidebar{
       display: none;
    }
    .footer h1{
-      padding-top: 180px;
+      padding-top: 150px;
    }
 }
 
@@ -866,7 +866,7 @@ input[id="menuicon"]+label, .slidebar{
    }
    .footer h1{
       font-size: 25px;
-      padding-top: 170px;
+      padding-top: 150px;
    }
    .reserved{
       font-size: 9px;
@@ -919,7 +919,7 @@ input[id="menuicon"]+label, .slidebar{
    }
    .footer h1{
       font-size: 25px;
-      padding-top: 160px;
+      padding-top: 150px;
    }
    .reserved{
       font-size: 6px;
