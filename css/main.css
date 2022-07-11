@@ -1,0 +1,935 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Floane';
+    src: url('../font/Floane-Regular.otf') format('otf');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff') format('woff'); 
+	font-weight: 100; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff'); 
+	font-weight: 200; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); 
+	font-weight: 300; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff'); 
+	font-weight: 400; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); 
+	font-weight: 500; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); 
+	font-weight: 600; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff'); 
+	font-weight: 700; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); 
+	font-weight: 800; 
+	font-style: normal; 
+}
+@font-face { 
+	font-family: 'S-CoreDream'; 
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff'); 
+	font-weight: 900; 
+	font-style: normal; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: 'S-CoreDream', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/*video*/
+.video1{
+   position:absolute;
+   top:0;left:0;
+   height:100%;width:100%;
+   object-fit:cover;
+}
+.video2{
+   display: none;
+}
+
+
+/*header*/
+header ul li{
+    color: #fff;
+   font-size: 18px;
+}
+.logo a{
+    float: left;
+   padding-top: 5px;
+   display: block;
+}
+.logo2 a, .logo3 a, .logo4 a, .logo5 a{
+    float: left;
+   padding-top: 3px;
+}
+.logo2, .logo3, .logo4, .logo5{
+    display: none;
+}
+.nav{
+    float: right;
+}
+.menu{
+    float: left;
+   position: relative;
+}
+.sub{
+   position: absolute;
+   top: 64px;
+   left: 0;
+   width: 100%;
+   display: none;
+   font-weight: 300;
+}
+.sub li a{
+   padding: 5px 0 !important;
+   font-size: 14px;
+   font-weight: 400;
+   display: block;
+   background: rgb(255, 255, 255, 0.8);
+   text-align: center;
+   color: rgb(102, 102, 102);
+}
+.sub li a:nth-child(1){
+   padding-top: 20px !important;
+}
+
+
+.menu{
+    display: block;
+   text-align:center;
+   padding: 20px 35px;
+}
+header, #header_inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+   padding: 51px 5% 20px 5%;
+}
+
+.nav> ul> li:hover .sub{
+   display: block;
+}
+.sub li a:hover{
+   color: rgb(109, 148, 19);
+}
+.sub .btn a{
+	padding-bottom: 20px !important;
+}
+
+
+
+/*main_video*/
+.main_banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+/*움직이는 메뉴버튼*/
+input[id="menuicon"]{
+	display: none;
+}
+/*움직이는 메뉴크기 위치*/
+input[id="menuicon"]+label{
+	display: block;
+	width: 40px;
+	height: 33px;
+	position: fixed;
+	right: 41px;   
+	top: 56px;
+	z-index: 20;
+	transition: all 0.5s;
+	cursor: pointer;
+   }
+/*움직이는 메뉴 클릭했을 때 색상*/
+input[id="menuicon"]:checked+label span{
+   background: #333333;
+}
+/*움직이는 메뉴 세줄선*/
+input[id="menuicon"]+label span{
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 3px;
+   border-radius: 30px;
+   background: #fff;
+   transition: all 0.5s;
+}
+input[id="menuicon"]+label span:nth-child(1){
+   top: 0;
+}
+input[id="menuicon"]+label span:nth-child(2){
+   top: 50%;
+   transform:translateY(-50%);
+}
+input[id="menuicon"]+label span:nth-child(3){
+   bottom:0;
+}
+
+/*움직이는 메뉴클릭했을 때 변화*/
+input[id="menuicon"]:checked+label span:nth-child(1){
+   top:50%;
+   transform: translateY(-50%) rotate(45deg);
+}
+input[id="menuicon"]:checked+label span:nth-child(2){
+   opacity: 0;
+}
+input[id="menuicon"]:checked+label span:nth-child(3){
+   bottom:50%;
+   transform: translateY(50%) rotate(-45deg);
+}
+
+/*움직이는 메뉴 클릭했을 때 나타나는 슬라이더*/
+.slidebar{
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   position: fixed;
+   top: 0;
+   right: -100%;
+   z-index: 10;
+   transition: all 0.5s;
+}
+input[id="menuicon"]:checked+label+div{
+   right:0;
+}
+
+/*슬라이더 안 메뉴*/
+.nav2{margin-top:100px;}
+.nav2 li{padding:30px;}
+.nav2 li a{color:#333333;
+font-size:30px;}
+
+
+input[id="menuicon"]+label, .slidebar{
+ display: none;
+}
+
+/*contents1*/
+.contents1{
+   width: 100%;
+   height: auto;
+}
+.contents1_in{
+   width: 1500px;
+   margin: 0 auto;
+   text-align: left;
+   height: 100vh;
+}
+.text1 h1, .text2 h1{
+  font-size: 70px;
+  padding-top: 294px;
+  font-weight: 500;
+}
+.seoil_text, .history_text, .seoil_text2, .seoil_text3, .sub_text{
+  font-size: 24px;
+  padding-top: 133px;
+  line-height: 40px;
+  font-weight: 200;
+}
+.seoil_text2, .seoil_text3{
+   display: none;
+}
+.contents1{
+   position: relative;
+}
+.img1{
+   position: absolute;
+   top: 0;
+   right: 0;
+   
+}
+.img1 img{
+   display: block;
+   height: 100%;
+   height: 100vh;
+}
+
+.view1{
+  padding-top: 144px;
+  padding-bottom: 30px;
+  font-size: 17px;
+  font-weight: 500;
+  background: url(../images/viewmore.png) no-repeat 6.5% 85%;
+  color: rgb(51, 51, 51, 0.7);
+}
+.view1:hover{
+  background: url(../images/viewmore.png) no-repeat 7.5% 85%;
+}
+.green{
+   color: #71a125;
+}
+
+/*history*/
+.view2{
+	padding-top: 144px;
+	padding-bottom: 30px;
+	font-size: 17px;
+	font-weight: 500;
+	background: url(../images/viewmore.png) no-repeat 99% 85%;
+	color: rgb(51, 51, 51, 0.7);
+    padding-right: 4%;    
+}
+
+.view2:hover{
+	background: url(../images/viewmore.png) no-repeat 100% 85%;
+}
+.green{
+	color: #71a125;
+}
+.history_text2{
+	font-size: 24px;
+	padding-top: 55px;
+	font-weight: 200;
+	text-align: right;
+	line-height: 34px;
+}
+.contents2{
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+}
+.contents2_in{
+    width: 1500px;
+    margin: 0 auto;
+    text-align: right;
+    height: auto;
+}
+.contents2{
+    position: relative;
+    height: 100vh;
+}
+.img2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+.img2 img{
+	display: block;
+    height: 100%;
+    height: 100vh;
+}
+
+.bold{
+	font-weight: 300;
+}
+
+.sub_text{
+   display: none;
+}
+
+
+
+/*갤러리*/
+.swiper img{
+   width: 100%;
+  display: block;
+}
+.gallery_container h1, .tech_container h1{
+  padding-top: 181px;
+  font-size: 54px;
+  font-weight: 500;
+}
+.gallery_text, .gallery_text2, .tech_text{
+  font-size: 17px;
+  color: #717171;
+  padding: 37px 0 117px 0;
+  font-weight: 200;
+}
+.gallery_container, .tech_container{
+   width: 100%;
+   text-align: center;
+   margin: 0 auto;
+   overflow: hidden;
+}
+.gallery_text2{
+   display: none;
+}
+#main_banner{
+   overflow: hidden;
+   padding-bottom: 150px;
+   background: #f8f8f8;
+}
+
+/*technology*/
+.tech_container{
+	width: 100%;
+   text-align: center;
+   overflow: hidden;
+   padding-bottom: 150px;
+}
+.tech_container h1{
+	padding-top: 181px;
+	font-size: 54px;
+	font-weight: 500;
+}
+.tech_inner{
+	width: 1451px;
+	margin: 0 auto;
+}
+.t_img1 div, .t_img2 div{
+   float: left;
+   margin-bottom: 10px;
+}
+.gray_box{
+   margin-right: 1%;
+}
+.btn{
+   margin-right: 0;
+}
+.tech_text{
+	font-size: 17px;
+	color: #717171;
+	padding: 37px 0 87px 0;
+	font-weight: 200;
+}
+.view5:hover{
+	background: url(../images/viewmore.png) no-repeat 100%;
+}
+.view5{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	font-weight: 500;
+	background: url(../images/viewmore.png) no-repeat 99%;
+	color: rgb(51, 51, 51, 0.7);
+	text-align: right;
+	padding-right: 4%;
+}
+/*호버시 그레이박스*/
+.gray_box{
+	position: relative;
+}
+.gray_in{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 242px;
+	background:rgba(67, 67, 67, 0.7);
+}
+.gray_text{
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	font-weight: 300;
+	padding-top: 110px;
+}
+.gray_in{
+	opacity: 0;
+	transition:all 1s;
+}
+.gray_box:hover .gray_in{
+	opacity: 1;
+}
+
+
+/*footer*/
+.footer{
+	height: 100vh;
+   background: #f8f8f8;
+   
+}
+.footer h1{
+	font-weight: 500;
+	font-size: 60px;
+	padding-top: 280px;
+}
+.footer p{	
+	color: #717171;
+}
+.f_text{
+	font-weight: 500;
+	font-size: 17px;
+	padding: 70px 0 52px;
+}
+.f_sub, .f_sub2{
+	font-weight: 300;
+	font-size: 17px;
+}
+.reserved{
+	font-size: 13px;
+	font-weight: 300;
+	padding-top: 90px;
+}
+.bold{
+	font-weight: 400;
+}
+.f_sub2{
+	padding-top: 16px;
+}
+.view6{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 17px;
+	font-weight: 500;
+	background: url(../images/viewmore.png) no-repeat 93%;
+	color: rgb(51, 51, 51, 0.7);
+	padding-right: 4%;
+}
+.view6{
+	position: absolute;
+	top: 80%;
+	right: 5%;
+}
+.view6:hover{
+	background: url(../images/viewmore.png) no-repeat 97%;
+}
+.footer_in{
+	position: relative;
+	width: 1451px;
+	margin: 0 auto;
+	text-align: left;
+   margin-top: 2px;
+}
+
+.change{
+   display: none;
+}
+
+.secon_box{
+   display: none;
+}
+
+
+@media(max-width:1910px){
+   .swiper-container{
+      display: none;
+   }
+
+}
+@media(max-width:1709px){
+	input[id="menuicon"]+label, .slidebar{
+        display: block;
+    }
+    .nav{
+        display: none;
+    }
+}
+
+@media(max-width:1600px){
+   .img1, .img2{
+      display: none;
+   }
+   .text1{
+      width: 100%;
+   }
+   .contents1_in, .contents2_in{
+      text-align: center;
+      width: 100%;
+   }
+   .view1, .view2{
+      background: none;
+    }
+    .text2{
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .history_text2{
+      text-align: center;
+    }
+    .contents2{
+      background: #f8f8f8;
+    }
+ #main_banner{
+   background: none;
+ }
+.view2, .footer{
+   background: none;
+}
+.contents2 h1{
+   padding-top: 223px;
+}
+.contents1 h1{
+   padding-top: 230px;
+}
+.tech_container{
+   background: #f8f8f8;
+}
+}
+@media(max-width:1464px){
+   .tech_inner{
+      width: 80%;
+   }
+  
+   .btn{
+      margin-right: 1%;
+   }
+   .t_img1, .t_img2{
+      display: none;
+   }
+   .secon_box{
+      display: block;
+      text-align: center;
+   }
+   .secon_box li{
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 20px;
+   }
+
+ 
+
+  
+
+}
+
+@media(max-width:1275px){
+	.logo2{
+        display: block;
+    }
+    .logo{
+        display: none;
+    }
+}
+@media(max-width:1233px){
+   .view6{
+      display: none;
+   }
+}
+@media(max-width:1082px){
+	.gallery_container h1, .tech_container h1{
+      font-size: 44px;
+      padding-top: 150px;
+   }
+   .gallery_text, .tech_text{
+      font-size: 16px;
+      padding: 30px 0 80px 0;
+   }
+}
+@media(max-width:1559px){
+   .footer_in{
+      width: 80%;
+   }
+}
+@media(max-width:866px){
+   .footer h1{
+      font-size: 50px;
+      padding-top: 220px;
+   }
+   .f_text, .f_sub, .f_sub2{
+      font-size: 14px;
+   }
+   .reserved{
+      font-size: 11px;
+      padding-top: 70px;
+   }
+}
+@media(max-width:866px){
+	.logo3{
+        display: block;
+    }
+    .logo2{
+        display: none;
+    }
+}
+@media(max-width:736px){
+   .seoil_text, .history_text, .history_text2{
+      font-size: 20px;
+   }
+   .text1 h1, .text2 h1{
+      font-size: 60px;
+      padding-top: 250px;
+   }
+   .seoil_text, .history_text, .seoil_text2{
+      padding-top: 100px;
+    }
+    .view1, .view2{
+      padding-top: 100px;
+      padding-bottom: 40px;
+      font-size: 15px;
+   }
+   .history_text2{
+      padding-top: 40px;
+   }
+   .gallery_container h1, .tech_container h1{
+      font-size: 34px;
+      padding-top: 100px;
+   }
+   .gallery_text, .tech_text{
+      font-size: 14px;
+      padding: 25px 0 60px 0;
+      
+   }
+}
+@media(max-width:718px){
+   .footer h1{
+      font-size: 40px;
+      padding-top: 200px;
+   }
+   .f_text, .f_sub, .f_sub2{
+      font-size: 12px;
+   }
+   .reserved{
+      font-size: 10px;
+      padding-top: 50px;
+   }
+}
+@media(max-width:617px){
+   .footer_in{
+      text-align: center;
+   }
+}
+@media(max-width:618px){
+   .f_text, .change{
+      display: block;
+      font-size: 16px;
+   }
+   .before{
+      display: none;
+   }
+   .footer h1{
+      padding-top: 180px;
+   }
+}
+
+@media(max-width:614px){
+   .video2{
+      position:absolute;
+      top:0;left:0;
+      height:100%;width:100%;
+      object-fit:cover;
+      display: block;
+   }
+}
+
+@media(max-width:598px){
+   .sub_text{
+      display: block;
+      font-size: 20px;
+      text-align: center;
+      padding-top: 80px;
+   }
+   .history_text, .history_text2{
+      display: none;
+   }
+   .bottom{
+      padding-bottom: 20px;
+   }
+   .text2 h1{
+      font-size: 50px;
+      padding-top: 150px;
+   }
+}
+
+@media(max-width:542px){
+   .seoil_text{
+      font-size: 16px;
+   }
+   .text1 h1{
+      font-size: 50px;
+      padding-top: 170px;
+   }
+
+   .contents1, .contents2, .text2{
+      overflow: 80vh;
+   }
+   .view2{
+      padding-top: 50px;
+   }
+   .gallery_text, .tech_text{
+      font-size: 12px;
+      padding: 10px 0 40px 0;
+   }
+   .gallery_container h1, .tech_container h1{
+      font-size: 28px;
+   }
+   .view1{
+      padding-bottom: 20px;
+   }
+   
+
+}
+@media(max-width:475px){
+   .f_text, .change{
+      display: block;
+      font-size: 14px;
+   }
+   .footer h1{
+      font-size: 30px;
+   }
+}
+@media(max-width:424px){
+   .seoil_text2{
+      font-size: 16px;
+      display: block;
+   }
+   .seoil_text{
+      display: none;
+   }
+
+   .text1 h1{
+      font-size: 50px;
+      padding-top: 200px;
+   }
+   .seoil_text, .seoil_text2{
+      padding-top: 50px;
+    }
+    .view1{
+      padding-top: 50px;
+      padding-bottom: 20px;
+      font-size: 13px;
+}
+}
+@media(max-width:419px){
+	.logo4{
+        display: block;
+    }
+    .logo3{
+        display: none;
+    }
+}
+@media(max-width:400px){
+	input[id="menuicon"]+label{
+      width: 35px;
+      height: 30px;
+      right: 30px;   
+      }
+      .gallery_container h1, .tech_container h1{
+         font-size: 26px;
+         padding-top: 80px;
+      }
+      .gallery_text, .tech_text{
+         font-size: 10px;
+         padding: 10px 0 40px 0;
+         
+      }
+}
+@media(max-width:385px){
+   .sub_text{
+      font-size: 18px;
+   }
+   .text2 h1{
+      font-size: 40px;
+      padding-top: 150px;
+   }
+   .f_text, .change{
+      font-size: 12px;
+   }
+   .footer h1{
+      font-size: 25px;
+      padding-top: 170px;
+   }
+   .reserved{
+      font-size: 9px;
+      padding-top: 40px;
+   }
+
+}
+@media(max-width:339px){
+	.logo5{
+        display: block;
+        padding-left: 3%;
+    }
+    .logo4{
+        display: none;
+    }
+    .seoil_text3{
+      display: block;
+      font-size: 16px;
+      padding-top: 50px;
+   }
+   .seoil_text2{
+      display: none;
+   }
+   .text1 h1, .text2 h1{
+      font-size: 50px;
+      padding-top: 200px;
+   }
+   .text1 h1, .text2 h1{
+      font-size: 40px;
+      padding-top: 150px;
+   }
+   .sub_text{
+      font-size: 18px;
+   }
+   .gallery_text{
+      display: block;
+      font-size: 9px;
+      padding: 10px 0 40px 0;
+
+   }
+   .sub_text{
+      font-size: 16px;
+   }
+   .text2 h1{
+      font-size: 35px;
+      padding-top: 150px;
+   }
+   .f_text, .change{
+      font-size: 10px;
+   }
+   .footer h1{
+      font-size: 25px;
+      padding-top: 160px;
+   }
+   .reserved{
+      font-size: 6px;
+      padding-top: 30px;
+   }
+}
+
+@media(max-width:298px){
+   .sub_text{
+      font-size: 16px;
+   }
+}
+
