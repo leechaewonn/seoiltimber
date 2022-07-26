@@ -256,7 +256,7 @@
 
 <!--top btn-->
 <div class="fixed_box">
-    <a href="#main_banner"><img src="images/top.png" alt="up"></a>
+    <a href="#header_inner"><img src="images/top.png" alt="up"></a>
 </div><!--fixed_box-->
 
     <script type="text/javascript">
@@ -364,10 +364,24 @@ check = () => {
   }
 }
     
+
+/*top버튼 부드럽게*/
+$(function() {
+				$('a[href*="#"]:not([href="#"])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+				$('html, body').animate({
+				scrollTop: target.offset().top
+				}, 500);//움직이는 시간 조정
+				return false;
+				}
+				}
+				});
+				});
             
     </script>
-
-
 
 
 
